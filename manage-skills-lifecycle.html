@@ -361,6 +361,31 @@
         font-weight: 500;
     }
 
+    /* ===== 빠른참조 링크 ===== */
+    .quick-link {
+        text-align: center;
+        padding: 20px;
+        background: #f8fafc;
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .quick-link a {
+        display: inline-block;
+        background: #6366f1;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s;
+    }
+
+    .quick-link a:hover {
+        background: #4f46e5;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+
     /* ===== 푸터 ===== */
     .footer {
         background: #1e293b;
@@ -400,6 +425,7 @@
         <div class="nav">
             <div class="nav-inner">
                 <a href="index.html">🏠 홈</a>
+                <a href="quick-reference.html">📋 빠른참조</a>
                 <a href="analyze-session-summary.html">📊 세션 분석</a>
                 <a href="zep-status-check.html">🔍 ZEP 상태</a>
                 <a href="push-skill-zeude.html">🚀 스킬 공유</a>
@@ -1091,6 +1117,10 @@ python3 ~/.claude/skills/manage-skills-lifecycle/scripts/batch_diagnose.py
 <p><a href="../quick-reference.md">← 빠른 참조로 돌아가기</a></p>
 <br>
 
+        </div>
+
+        <div class="quick-link">
+            <a href="quick-reference.html">📋 빠른참조로 돌아가기</a>
         </div>
 
         <div class="footer">

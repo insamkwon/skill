@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📋 빠른참조</title>
+    
+<style>
+    /* ===== 초기화 ===== */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* ===== 기본 스타일 ===== */
+    body {
+        font-family: 'Apple SD Gothic', 'Malgun Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background: #f8f9fa;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        word-wrap: break-word;       /* 전체적으로 자동 줄바꿈 */
+        overflow-wrap: break-word;
+    }
+
+    /* ===== 컨테이너 ===== */
+    .container {
+        max-width: 1500px;
+        margin: 0 auto;
+        background: white;
+        box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+        min-height: 100vh;
+    }
+
+    /* ===== 헤더 ===== */
+    .header {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        color: white;
+        padding: 50px 40px;
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 2.5em;
+        font-weight: 700;
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
+    }
+
+    .header p {
+        font-size: 1.15em;
+        opacity: 0.95;
+    }
+
+    /* ===== 네비게이션 ===== */
+    .nav {
+        background: #fff;
+        padding: 0;
+        border-bottom: 1px solid #e5e7eb;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .nav-inner {
+        max-width: 1500px;
+        margin: 0 auto;
+        display: flex;
+        padding: 0 20px;
+        overflow-x: auto;
+    }
+
+    .nav a {
+        display: block;
+        color: #6366f1;
+        text-decoration: none;
+        padding: 16px 20px;
+        font-weight: 500;
+        transition: all 0.2s;
+        white-space: nowrap;
+        border-bottom: 2px solid transparent;
+    }
+
+    .nav a:hover {
+        color: #4f46e5;
+        background: #f8fafc;
+    }
+
+    .nav a.active {
+        border-bottom-color: #6366f1;
+    }
+
+    /* ===== 컨텐츠 ===== */
+    .content {
+        padding: 40px;
+    }
+
+    /* ===== 헤딩 ===== */
+    h1 {
+        font-size: 2.2em;
+        color: #1e293b;
+        margin: 35px 0 20px;
+        padding-bottom: 12px;
+        border-bottom: 3px solid #e5e7eb;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        color: #334155;
+        margin: 30px 0 18px;
+        padding-left: 16px;
+        border-left: 5px solid #6366f1;
+    }
+
+    h3 {
+        font-size: 1.4em;
+        color: #475569;
+        margin: 25px 0 15px;
+    }
+
+    h4 {
+        font-size: 1.15em;
+        color: #64748b;
+        margin: 20px 0 10px;
+    }
+
+    /* ===== 문단 ===== */
+    p {
+        margin: 16px 0;
+        line-height: 1.8;
+    }
+
+    /* ===== 리스트 ===== */
+    ul, ol {
+        margin: 16px 0 16px 28px;
+    }
+
+    li {
+        margin: 10px 0;
+        line-height: 1.7;
+    }
+
+    /* ===== 코드 ===== */
+    code {
+        background: #f3f4f6;
+        color: #dc2626;
+        padding: 3px 8px;
+        border-radius: 6px;
+        font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+        font-size: 0.9em;
+        font-weight: 500;
+    }
+
+    pre {
+        background: #1e293b;
+        color: #f1f5f9;
+        padding: 20px;
+        border-radius: 10px;
+        overflow-x: auto;
+        margin: 24px 0;
+        line-height: 1.4;
+        border: 1px solid #334155;
+        /* 줄바꿈 그대로 유지 - ASCII 아트 깨짐 방지 */
+        white-space: pre;
+        max-width: 100%;
+        font-size: 0.8em;
+    }
+
+    pre code {
+        background: #1e293b;
+        color: #f1f5f9;
+        padding: 0;
+        font-size: 1em;
+        font-weight: 400;
+    }
+
+    /* 인라인 코드는 더 밝게 */
+    p code, li code {
+        background: #e5e7eb;
+        color: #b91c1c;
+        font-weight: 500;
+        word-break: break-word;
+    }
+
+    /* ===== 인용구 ===== */
+    blockquote {
+        border-left: 4px solid #6366f1;
+        padding: 16px 24px;
+        margin: 24px 0;
+        background: #f8fafc;
+        color: #64748b;
+        border-radius: 0 8px 8px 0;
+    }
+
+    /* ===== 표 ===== */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 24px 0;
+        overflow-x: auto;
+    }
+
+    th, td {
+        padding: 14px 16px;
+        text-align: left;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    th {
+        background: #f8fafc;
+        font-weight: 600;
+        color: #334155;
+    }
+
+    tr:hover {
+        background: #f8fafc;
+    }
+
+    /* ===== 구분선 ===== */
+    hr {
+        border: none;
+        border-top: 2px solid #e5e7eb;
+        margin: 40px 0;
+    }
+
+    /* ===== 링크 ===== */
+    a {
+        color: #6366f1;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    a:hover {
+        color: #4f46e5;
+        text-decoration: underline;
+    }
+
+    /* ===== 스킬 카드 ===== */
+    .skill-card {
+        background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+        padding: 24px;
+        border-radius: 12px;
+        margin: 24px 0;
+        border-left: 5px solid #6366f1;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .skill-card h3 {
+        color: #4f46e5;
+        margin-top: 0;
+    }
+
+    /* ===== Before/After 박스 ===== */
+    .before-after {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin: 24px 0;
+    }
+
+    .before, .after {
+        padding: 24px;
+        border-radius: 12px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .before {
+        background: #fef2f2;
+        border-left: 5px solid #ef4444;
+    }
+
+    .after {
+        background: #f0fdf4;
+        border-left: 5px solid #22c55e;
+    }
+
+    .before h4, .after h4 {
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+
+    .before h4 {
+        color: #dc2626;
+    }
+
+    .after h4 {
+        color: #16a34a;
+    }
+
+    /* ===== 박스 ===== */
+    .warning-box {
+        background: #fef3c7;
+        border-left: 4px solid #f59e0b;
+        padding: 16px 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .success-box {
+        background: #d1fae5;
+        border-left: 4px solid #10b981;
+        padding: 16px 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .info-box {
+        background: #dbeafe;
+        border-left: 4px solid #3b82f6;
+        padding: 16px 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* ===== 플로우차트 (ASCII 아트) ===== */
+    .flow-chart {
+        background: #1e293b;
+        color: #f1f5f9;
+        padding: 24px;
+        border-radius: 12px;
+        margin: 24px 0;
+        /* 고정폭 폰트로 간격 유지 - 다이어그램 깨짐 방지 */
+        font-family: 'Monaco', 'Menlo', 'Consolas', 'Courier New', monospace;
+        font-size: 0.9em;
+        line-height: 1.2;
+        /* 줄 바꿈하지 않고 그대로 유지, 가로 스크롤 허용 */
+        white-space: pre;
+        overflow-x: auto;
+        /* 너무 긴 줄은 가로 스크롤 */
+        word-break: break-word;
+        max-width: 100%;
+    }
+
+    /* ===== 이모지 ===== */
+    .emoji-large {
+        font-size: 3em;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    /* ===== 태그 ===== */
+    .tag {
+        display: inline-block;
+        background: #e0e7ff;
+        color: #4338ca;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85em;
+        margin: 4px 4px 4px 0;
+        font-weight: 500;
+    }
+
+    /* ===== 빠른참조 링크 ===== */
+    .quick-link {
+        text-align: center;
+        padding: 20px;
+        background: #f8fafc;
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .quick-link a {
+        display: inline-block;
+        background: #6366f1;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s;
+    }
+
+    .quick-link a:hover {
+        background: #4f46e5;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+
+    /* ===== 푸터 ===== */
+    .footer {
+        background: #1e293b;
+        color: #94a3b8;
+        padding: 30px 40px;
+        text-align: center;
+    }
+
+    /* ===== 반응형 ===== */
+    @media (max-width: 768px) {
+        .header h1 {
+            font-size: 1.8em;
+        }
+
+        .content {
+            padding: 24px;
+        }
+
+        .nav-inner {
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            font-size: 1.8em;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 빠른참조</h1>
+            <p>2026년 03월 11일</p>
+        </div>
+
+        <div class="nav">
+            <div class="nav-inner">
+                <a href="index.html">🏠 홈</a>
+                <a href="quick-reference.html">📋 빠른참조</a>
+                <a href="analyze-session-summary.html">📊 세션 분석</a>
+                <a href="zep-status-check.html">🔍 ZEP 상태</a>
+                <a href="push-skill-zeude.html">🚀 스킬 공유</a>
+                <a href="manage-skills-lifecycle.html">🛠️ 스킬 관리</a>
+            </div>
+        </div>
+
+        <div class="content">
+<h1>🎯 Claude Code 스킬 빠른 참조</h1>
+<br>
+<blockquote>**"5분 만에 모든 스킬을 파악하는 한 장 가이드"**</blockquote>
+<br>
+<hr>
+<br>
+<p>## 📋 목차</p>
+<br>
+<p>1. <a href="#스킬-선택-가이드">스킬 선택 가이드</a></p>
+<p>2. <a href="#4개-스킬-한눈에-보기">4개 스킬 한눈에 보기</a></p>
+<p>3. <a href="#beforeafter-비교">Before/After 비교</a></p>
+<p>4. <a href="#상세-가이드-링크">상세 가이드 링크</a></p>
+<br>
+<hr>
+<br>
+<p>## 스킬 선택 가이드</p>
+<br>
+<p>### 🤔 "나 이런 상황인데... 어떤 스킬 쓰면 돼?"</p>
+<br>
+<tr><td>상황</td><td>쓸 스킬</td><td>바로가기</td></tr>
+<tr><td>"오늘/이번주에 뭘 했지?"</td><td>`analyze-session-summary`</td><td>[상세보기](./analyze-session-summary/)</td></tr>
+<tr><td>"주간 회의 준비해야 하는데..."</td><td>`analyze-session-summary`</td><td>[상세보기](./analyze-session-summary/)</td></tr>
+<tr><td>"내 업무 패턴이 궁금해"</td><td>`analyze-session-summary`</td><td>[상세보기](./analyze-session-summary/)</td></tr>
+<tr><td>"지금 운영 버전이 뭐지?"</td><td>`zep-status-check`</td><td>[상세보기](./zep-status-check/)</td></tr>
+<tr><td>"최근에 뭐 배포됐어?"</td><td>`zep-status-check`</td><td>[상세보기](./zep-status-check/)</td></tr>
+<tr><td>"디자인 검수 전인데..."</td><td>`zep-status-check`</td><td>[상세보기](./zep-status-check/)</td></tr>
+<tr><td>"내 스킬 팀에게 공유하고 싶어"</td><td>`push-skill-zeude`</td><td>[상세보기](./push-skill-zeude/)</td></tr>
+<tr><td>"새 스킬 만들고 싶은데..."</td><td>`manage-skills-lifecycle`</td><td>[상세보기](./manage-skills-lifecycle/)</td></tr>
+<br>
+<hr>
+<br>
+<p>## 4개 스킬 한눈에 보기</p>
+<br>
+<p>### 📊 스킬 비교표</p>
+<br>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                              │
+│  ┌───────────────────┐  ┌───────────────────┐  ┌───────────────────┐       │
+│  │  analyze-session  │  │  zep-status-check │  │  push-skill-zeude │       │
+│  │     -summary      │  │                   │  │                   │       │
+│  └─────────┬─────────┘  └─────────┬─────────┘  └─────────┬─────────┘       │
+│            │                      │                      │                  │
+│            ▼                      ▼                      ▼                  │
+│  ┌──────────────────────────────────────────────────────────────────────┐ │
+│  │           manage-skills-lifecycle (스킬 관리 프레임워크)              │ │
+│  └──────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<br>
+<tr><td>스킬</td><td>한 줄 소개</td><td>대상</td><td>난이도</td><td>빈도</td></tr>
+<tr><td>**analyze-session-summary**</td><td>대화 세션을 PM/PO 관점으로 분석</td><td>PM, PO, 디자이너, 개발자</td><td>⭐ 쉬움</td><td>일일/주간</td></tr>
+<tr><td>**zep-status-check**</td><td>ZEP 3개 프로젝트 상태 한 번에 확인</td><td>PM, 디자이너, 개발자</td><td>⭐ 쉬움</td><td>수시</td></tr>
+<tr><td>**push-skill-zeude**</td><td>로컬 스킬을 Zeude Dashboard에 업로드</td><td>스킬 제작자</td><td>⭐⭐ 보통</td><td>필요시</td></tr>
+<tr><td>**manage-skills-lifecycle**</td><td>PDCA 사이클로 스킬 생성/검증/개선</td><td>스킬 관리자</td><td>⭐⭐⭐ 어려움</td><td>스킬 개발시</td></tr>
+<br>
+<hr>
+<br>
+<p>## Before/After 비교</p>
+<br>
+<p>### 🔴 analyze-session-summary</p>
+<br>
+<pre><code>┌─────────────────────────────────────────────────────────────────┐
+│  🔴 BEFORE (스킬 없이)                                           │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  🙋‍♀️ 김기효 PM: "저번주에 뭘 했더라..."                          │
+│                                                                   │
+│  → Slack 찾아보기 📱                                             │
+│  → 이메일 정리하기 📧                                             │
+│  → Jira 티켓 확인하기 🎫                                         │
+│  → 메모장 뒤적거리기 📝                                          │
+│                                                                   │
+│  ⏰️ 30분 걸림  😫 스트레스                                        │
+│                                                                   │
+└─────────────────────────────────────────────────────────────────┘
+                              ⬇️
+┌─────────────────────────────────────────────────────────────────┐
+│  🟢 AFTER (스킬 사용)                                            │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  🙋‍♀️ 김기효 PM: "세션 요약해줘"                                    │
+│                                                                   │
+│  🤖 Claude:                                                        │
+│     📊 이번주 한 일:                                               │
+│     • PRD 3개 작성 (로그인 개편, 프로필 수정, 알림 기능)          │
+│     • 디자인 리뷰 5회                                              │
+│     • 스프린트 계획 1회                                            │
+│                                                                   │
+│     ⏭️ 다음 할 일:                                                 │
+│     • [ ] 로그인 개편 회의                                         │
+│     • [ ] 디자이너와 알림 기능 논의                                │
+│                                                                   │
+│  ⏱️ 10초 걸림  ✅ 회의 준비 완료!                                   │
+│                                                                   │
+└─────────────────────────────────────────────────────────────────┘</code></pre>
+<br>
+<p>### 🔴 zep-status-check</p>
+<br>
+<pre><code>┌─────────────────────────────────────────────────────────────────┐
+│  🔴 BEFORE (스킬 없이)                                           │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  🎨 이디자이너: "디자인 검수 전인데, 지금 운영 버전이 뭐지?"      │
+│                                                                   │
+│  → GitHub 들어가기 🌐                                            │
+│  → zep-client 레포 검색 🔍                                        │
+│  → live 브랜치 확인 🌿                                            │
+│  → 최신 커밋 5개 읽어보기 📜                                       │
+│  → zep 레포도 똑같이 반복 🔄                                       │
+│  → zep-quiz-spring-server도... 😩                                 │
+│                                                                   │
+│  ⏰️ 15분 걸림  🤯 브랜치 이름도 헷갈리고...                        │
+│                                                                   │
+└─────────────────────────────────────────────────────────────────┘
+                              ⬇️
+┌─────────────────────────────────────────────────────────────────┐
+│  🟢 AFTER (스킬 사용)                                            │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  🎨 이디자이너: "ZEP 상태 확인"                                    │
+│                                                                   │
+│  🤖 Claude:                                                        │
+│     📊 ZEP 상태 보고서:                                            │
+│                                                                   │
+│     ### Frontend (zep-client) - live 브랜치                      │
+│     • a1b2c3d 프로필 페이지 개선 (2시간 전)  ⭐ 최신                │
+│     • e5f6g7h 로그인 버튼 수정 (5시간 전)                         │
+│     • ...                                                         │
+│                                                                   │
+│     ### Backend (zep) - publish/live 브랜치                      │
+│     • ...                                                         │
+│                                                                   │
+│     ### Quiz (zep-quiz-spring-server) - dev 브랜치               │
+│     • ...                                                         │
+│                                                                   │
+│  ⏱️ 5초 걸림  ✅ 3개 프로젝트 한 번에 확인!                        │
+│                                                                   │
+└─────────────────────────────────────────────────────────────────┘</code></pre>
+<br>
+<hr>
+<br>
+<p>## 💬 발동 키워드 (그냥 말하세요!)</p>
+<br>
+<tr><td>스킬</td><td>말하는 방법</td><td>슬래시 명령어</td></tr>
+<tr><td>**analyze-session-summary**</td><td>"세션 요약", "세션 저장", "오늘 한 일 정리"</td><td>`/session-summary`<br>`/session-summary --today`<br>`/session-summary --week`</td></tr>
+<tr><td>**zep-status-check**</td><td>"ZEP 상태 확인", "젭 현황", "서버 상태 체크"</td><td>`/zep-status`</td></tr>
+<tr><td>**push-skill-zeude**</td><td>"스킬 업로드", "스킬 푸시", "이 스킬 팀과 공유"</td><td>`/push-skill-zeude`</td></tr>
+<tr><td>**manage-skills-lifecycle**</td><td>"스킬 만들어줘", "스킬 검증해줘", "스킬 개선"</td><td>`/manage-skills-lifecycle`</td></tr>
+<br>
+<hr>
+<br>
+<p>## 📊 사용자별 추천 스킬</p>
+<br>
+<pre><code>┌─────────────────────────────────────────────────────────────────┐
+│  👔 PM / PO                                                      │
+│  ───────────────────────────────────────────────────────────    │
+│                                                                   │
+│  ⭐⭐⭐ analyze-session-summary  (가장 추천!)                    │
+│  • 주간 회의 전 업무 정리                                         │
+│  • 월간/분기 성과 평가                                            │
+│  • 업무 패턴 분석과 개선                                          │
+│                                                                   │
+│  ⭐⭐ zep-status-check                                            │
+│  • 기획 회의 전 최신 변경사항 확인                                 │
+│  • 배포 버전 확인                                                 │
+│                                                                   │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│  🎨 디자이너                                                      │
+│  ───────────────────────────────────────────────────────────    │
+│                                                                   │
+│  ⭐⭐⭐ zep-status-check  (가장 추천!)                            │
+│  • 디자인 검수 전 운영 버전 확인                                  │
+│  • 최신 변경사항 파악                                             │
+│  • 버그 리포트 작성 전 버전 확인                                   │
+│                                                                   │
+│  ⭐⭐ analyze-session-summary                                     │
+│  • 디자인 리뷰 시간 정리                                          │
+│  • 업무 일지 작성                                                 │
+│                                                                   │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│  👨‍💻 개발자                                                       │
+│  ───────────────────────────────────────────────────────────    │
+│                                                                   │
+│  ⭐⭐⭐ push-skill-zeude  (스킬 제작자)                           │
+│  • 만든 스킬 팀 공유                                               │
+│                                                                   │
+│  ⭐⭐ manage-skills-lifecycle  (스킬 관리자)                      │
+│  • 새 스킬 체계적 생성                                             │
+│  • 기존 스킬 품질 진단                                             │
+│                                                                   │
+│  ⭐⭐ zep-status-check                                             │
+│  • 코드 분석 전 환경 셋업                                         │
+│                                                                   │
+└─────────────────────────────────────────────────────────────────┘</code></pre>
+<br>
+<hr>
+<br>
+<p>## 🗂️ 상세 가이드 링크</p>
+<br>
+<p>각 스킬의 상세한 사용법이 궁금하다면 클릭하세요:</p>
+<br>
+<tr><td>스킬</td><td>상세 가이드</td></tr>
+<tr><td>**analyze-session-summary**</td><td>[📖 상세 보기](./analyze-session-summary/)</td></tr>
+<tr><td>**zep-status-check**</td><td>[📖 상세 보기](./zep-status-check/)</td></tr>
+<tr><td>**push-skill-zeude**</td><td>[📖 상세 보기](./push-skill-zeude/)</td></tr>
+<tr><td>**manage-skills-lifecycle**</td><td>[📖 상세 보기](./manage-skills-lifecycle/)</td></tr>
+<br>
+<hr>
+<br>
+<em>이 문서는 2026년 3월에 작성되었습니다. 최신 버전은 Slack #claude-code 채널을 확인하세요!</em>
+<br>
+
+        </div>
+
+        <div class="quick-link">
+            <a href="quick-reference.html">📋 빠른참조로 돌아가기</a>
+        </div>
+
+        <div class="footer">
+            <p>Generated by Claude Code • 2026</p>
+        </div>
+    </div>
+</body>
+</html>
