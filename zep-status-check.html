@@ -322,20 +322,23 @@
         overflow-wrap: break-word;
     }
 
-    /* ===== 플로우차트 ===== */
+    /* ===== 플로우차트 (ASCII 아트) ===== */
     .flow-chart {
         background: #1e293b;
         color: #f1f5f9;
         padding: 24px;
         border-radius: 12px;
         margin: 24px 0;
-        font-family: 'Monaco', 'Consolas', monospace;
+        /* 고정폭 폰트로 간격 유지 - 다이어그램 깨짐 방지 */
+        font-family: 'Monaco', 'Menlo', 'Consolas', 'Courier New', monospace;
         font-size: 0.9em;
-        line-height: 1.6;
+        line-height: 1.2;
+        /* 줄 바꿈하지 않고 그대로 유지, 가로 스크롤 허용 */
+        white-space: pre;
         overflow-x: auto;
-        white-space: pre-wrap;  /* 자동 줄바꿈 */
-        word-break: break-word;      /* 긴 단어 줄바꿈 */
-        max-width: 100%;             /* 화면 너비에 맞춤 */
+        /* 너무 긴 줄은 가로 스크롤 */
+        word-break: break-word;
+        max-width: 100%;
     }
 
     /* ===== 이모지 ===== */
