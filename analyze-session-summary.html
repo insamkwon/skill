@@ -22,6 +22,8 @@
         padding: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        word-wrap: break-word;       /* 전체적으로 자동 줄바꿈 */
+        overflow-wrap: break-word;
     }
 
     /* ===== 컨테이너 ===== */
@@ -161,6 +163,9 @@
         margin: 24px 0;
         line-height: 1.6;
         border: 1px solid #334155;
+        white-space: pre-wrap;     /* 코드는 줄 유지하되되 넘치면 줄바꿈 */
+        word-break: break-word;
+        max-width: 100%;
     }
 
     pre code {
@@ -176,6 +181,7 @@
         background: #e5e7eb;
         color: #b91c1c;
         font-weight: 500;
+        word-break: break-word;
     }
 
     /* ===== 인용구 ===== */
@@ -238,6 +244,8 @@
         border-radius: 12px;
         margin: 24px 0;
         border-left: 5px solid #6366f1;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .skill-card h3 {
@@ -256,6 +264,8 @@
     .before, .after {
         padding: 24px;
         border-radius: 12px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .before {
@@ -288,6 +298,8 @@
         padding: 16px 20px;
         margin: 20px 0;
         border-radius: 8px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .success-box {
@@ -296,6 +308,8 @@
         padding: 16px 20px;
         margin: 20px 0;
         border-radius: 8px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .info-box {
@@ -304,12 +318,14 @@
         padding: 16px 20px;
         margin: 20px 0;
         border-radius: 8px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     /* ===== 플로우차트 ===== */
     .flow-chart {
         background: #1e293b;
-        color: #e2e8f0;
+        color: #f1f5f9;
         padding: 24px;
         border-radius: 12px;
         margin: 24px 0;
@@ -317,7 +333,9 @@
         font-size: 0.9em;
         line-height: 1.6;
         overflow-x: auto;
-        white-space: pre;
+        white-space: pre-wrap;  /* 자동 줄바꿈 */
+        word-break: break-word;      /* 긴 단어 줄바꿈 */
+        max-width: 100%;             /* 화면 너비에 맞춤 */
     }
 
     /* ===== 이모지 ===== */
