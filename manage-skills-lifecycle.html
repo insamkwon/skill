@@ -161,10 +161,10 @@
         border-radius: 10px;
         overflow-x: auto;
         margin: 24px 0;
-        line-height: 1.6;
+        line-height: 1.4;
         border: 1px solid #334155;
-        white-space: pre-wrap;     /* 코드는 줄 유지하되되 넘치면 줄바꿈 */
-        word-break: break-word;
+        /* 줄바꿈 그대로 유지 - ASCII 아트 깨짐 방지 */
+        white-space: pre;
         max-width: 100%;
     }
 
