@@ -539,16 +539,46 @@
 <br>
 <p>### 🚀 진입점별 추천 경로</p>
 <br>
-<tr><td>상황</td><td>시작점</td><td>다음 단계</td></tr>
-<tr><td>**"완전히 새로운 스킬을 만들고 싶어"**</td><td>[새 스킬 생성](#1-새-스킬-생성)</td><td>→ 검증 → 배포</td></tr>
-<tr><td>**"기존 스킬이 잘 작동하는지 확인하고 싶어"**</td><td>[스킬 진단](#2-스킬-진단)</td><td>→ 개선 또는 유지</td></tr>
-<tr><td>**"전체 스킬 현황 파악하고 싶어"**</td><td>[일괄 진단](#3-일괄-진단)</td><td>→ 필요 시 개선</td></tr>
-<tr><td>**"스킬 두 개 비교하고 싶어"**</td><td>[A/B 비교](#4-ab-비교)</td><td>→ 선택 적용</td></tr>
-<tr><td>**"스킬 롤백 준비하고 실험하고 싶어"**</td><td>[스냅샷 & 롤백](#5-스냅샷--롤백)</td><td>→ 실험 → 결정</td></tr>
-<tr><td>**"사용하지 않는 스킬 정리하고 싶어"**</td><td>[스킬 폐기](#6-스킬-폐기)</td><td>→ 삭제</td></tr>
 <br>
 <hr>
 <br>
+<table>
+<tr>
+<th>상황</th>
+<th>시작점</th>
+<th>다음 단계</th>
+</tr>
+<tr>
+<td><strong>"완전히 새로운 스킬을 만들고 싶어"</strong></td>
+<td><a href="#1-새-스킬-생성">새 스킬 생성</a></td>
+<td>→ 검증 → 배포</td>
+</tr>
+<tr>
+<td><strong>"기존 스킬이 잘 작동하는지 확인하고 싶어"</strong></td>
+<td><a href="#2-스킬-진단">스킬 진단</a></td>
+<td>→ 개선 또는 유지</td>
+</tr>
+<tr>
+<td><strong>"전체 스킬 현황 파악하고 싶어"</strong></td>
+<td><a href="#3-일괄-진단">일괄 진단</a></td>
+<td>→ 필요 시 개선</td>
+</tr>
+<tr>
+<td><strong>"스킬 두 개 비교하고 싶어"</strong></td>
+<td><a href="#4-ab-비교">A/B 비교</a></td>
+<td>→ 선택 적용</td>
+</tr>
+<tr>
+<td><strong>"스킬 롤백 준비하고 실험하고 싶어"</strong></td>
+<td><a href="#5-스냅샷--롤백">스냅샷 & 롤백</a></td>
+<td>→ 실험 → 결정</td>
+</tr>
+<tr>
+<td><strong>"사용하지 않는 스킬 정리하고 싶어"</strong></td>
+<td><a href="#6-스킬-폐기">스킬 폐기</a></td>
+<td>→ 삭제</td>
+</tr>
+</table>
 <p>## 스킬 생애주기 완전 플로우</p>
 <br>
 <pre><code>┌─────────────────────────────────────────────────────────────────────┐
@@ -992,31 +1022,117 @@ description: "회의 내용을 자동으로 정리하여 구조화된 문서로 
 <br>
 <p>### 📁 전체 스크립트 목록</p>
 <br>
-<tr><td>스크립트</td><td>용도</td><td>진입점</td></tr>
-<tr><td>**생성 & 초기화**</td></tr>
-<tr><td>`duplicate_check.py`</td><td>중복 감지</td><td>새 스킬 생성 전</td></tr>
-<tr><td>`init_skill.py`</td><td>스킬 초기화</td><td>새 스킬 생성</td></tr>
-<tr><td>**검증 & 진단**</td></tr>
-<tr><td>`quick_validate.py`</td><td>빠른 검증 + 벤치마크</td><td>스킬 검증</td></tr>
-<tr><td>`diagnose_skill.py`</td><td>개별 스킬 진단</td><td>스킬 진단</td></tr>
-<tr><td>`batch_diagnose.py`</td><td>전체 스킬 진단</td><td>일괄 진단</td></tr>
-<tr><td>**비교 & 평가**</td></tr>
-<tr><td>`compare_skills.py`</td><td>A/B 비교</td><td>스킬 비교</td></tr>
-<tr><td>`parallel_eval.py`</td><td>병렬 평가</td><td>여러 스킬 동시 테스트</td></tr>
-<tr><td>**안전 관리**</td></tr>
-<tr><td>`snapshot_skill.py`</td><td>스킬 스냅샷</td><td>실험 전</td></tr>
-<tr><td>`cascade_rollback.py`</td><td>연쇄 롤백</td><td>실험 실패 후</td></tr>
-<tr><td>`regression_check.py`</td><td>회귀 감지</td><td>수정 후</td></tr>
-<tr><td>**정리**</td></tr>
-<tr><td>`deprecate_skill.py`</td><td>스킬 폐기</td><td>사용 중단</td></tr>
-<tr><td>`naming_check.py`</td><td>네이밍 검증</td><td>네이밍 표준 확인</td></tr>
-<tr><td>**관리**</td></tr>
-<tr><td>`generate_registry.py`</td><td>레지스트리 생성</td><td>전체 관리</td></tr>
-<tr><td>`list_skills.py`</td><td>스킬 목록</td><td>스킬 확인</td></tr>
-<tr><td>`delegation_graph.py`</td><td>위임 그래프</td><td>의존 관계 확인</td></tr>
-<tr><td>`zeude_catalog.py`</td><td>Zeude 카탈로그</td><td>Dashboard 동기화</td></tr>
-<tr><td>`auto_changelog.py`</td><td>자동 변경로그</td><td>버전 관리</td></tr>
 <br>
+<table>
+<tr>
+<th>스크립트</th>
+<th>용도</th>
+<th>진입점</th>
+</tr>
+<tr>
+<td><strong>생성 & 초기화</strong></td>
+</tr>
+<tr>
+<td><code>duplicate_check.py</code></td>
+<td>중복 감지</td>
+<td>새 스킬 생성 전</td>
+</tr>
+<tr>
+<td><code>init_skill.py</code></td>
+<td>스킬 초기화</td>
+<td>새 스킬 생성</td>
+</tr>
+<tr>
+<td><strong>검증 & 진단</strong></td>
+</tr>
+<tr>
+<td><code>quick_validate.py</code></td>
+<td>빠른 검증 + 벤치마크</td>
+<td>스킬 검증</td>
+</tr>
+<tr>
+<td><code>diagnose_skill.py</code></td>
+<td>개별 스킬 진단</td>
+<td>스킬 진단</td>
+</tr>
+<tr>
+<td><code>batch_diagnose.py</code></td>
+<td>전체 스킬 진단</td>
+<td>일괄 진단</td>
+</tr>
+<tr>
+<td><strong>비교 & 평가</strong></td>
+</tr>
+<tr>
+<td><code>compare_skills.py</code></td>
+<td>A/B 비교</td>
+<td>스킬 비교</td>
+</tr>
+<tr>
+<td><code>parallel_eval.py</code></td>
+<td>병렬 평가</td>
+<td>여러 스킬 동시 테스트</td>
+</tr>
+<tr>
+<td><strong>안전 관리</strong></td>
+</tr>
+<tr>
+<td><code>snapshot_skill.py</code></td>
+<td>스킬 스냅샷</td>
+<td>실험 전</td>
+</tr>
+<tr>
+<td><code>cascade_rollback.py</code></td>
+<td>연쇄 롤백</td>
+<td>실험 실패 후</td>
+</tr>
+<tr>
+<td><code>regression_check.py</code></td>
+<td>회귀 감지</td>
+<td>수정 후</td>
+</tr>
+<tr>
+<td><strong>정리</strong></td>
+</tr>
+<tr>
+<td><code>deprecate_skill.py</code></td>
+<td>스킬 폐기</td>
+<td>사용 중단</td>
+</tr>
+<tr>
+<td><code>naming_check.py</code></td>
+<td>네이밍 검증</td>
+<td>네이밍 표준 확인</td>
+</tr>
+<tr>
+<td><strong>관리</strong></td>
+</tr>
+<tr>
+<td><code>generate_registry.py</code></td>
+<td>레지스트리 생성</td>
+<td>전체 관리</td>
+</tr>
+<tr>
+<td><code>list_skills.py</code></td>
+<td>스킬 목록</td>
+<td>스킬 확인</td>
+</tr>
+<tr>
+<td><code>delegation_graph.py</code></td>
+<td>위임 그래프</td>
+<td>의존 관계 확인</td>
+</tr>
+<tr>
+<td><code>zeude_catalog.py</code></td>
+<td>Zeude 카탈로그</td>
+<td>Dashboard 동기화</td>
+</tr>
+<tr>
+<td><code>auto_changelog.py</code></td>
+<td>자동 변경로그</td>
+<td>버전 관리</td>
+</tr>
+</table>
 <p>### 🔧 각 스크립트 상세 사용법</p>
 <br>
 <p>#### 1. duplicate_check.py</p>
@@ -1073,18 +1189,47 @@ python3 ~/.claude/skills/manage-skills-lifecycle/scripts/batch_diagnose.py
 <br>
 <p>## 📊 스킬 상세 정보</p>
 <br>
-<tr><td>항목</td><td>내용</td></tr>
-<tr><td>🎯 주요 사용자</td><td>스킬 관리자, 스킬 제작자</td></tr>
-<tr><td>⏱️  평균 실행 시간</td><td>10분~1시간 (작업에 따라)</td></tr>
-<tr><td>📊 난이도</td><td>⭐⭐⭐ (어려움)</td></tr>
-<tr><td>🔧 사전 준비</td><td>Python 3.6+</td></tr>
-<tr><td>🔄 사용 빈도</td><td>스킬 개발시, 주간/월간 점검</td></tr>
-<tr><td>📦 의존성</td><td>Python 스크립트</td></tr>
-<tr><td>🎁 아웃풋</td><td>plan.md, SKILL.md, 검증 리포트, 레지스트리</td></tr>
-<tr><td>🔒 개인정보</td><td>없음</td></tr>
 <br>
 <hr>
 <br>
+<table>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+<tr>
+<td>🎯 주요 사용자</td>
+<td>스킬 관리자, 스킬 제작자</td>
+</tr>
+<tr>
+<td>⏱️  평균 실행 시간</td>
+<td>10분~1시간 (작업에 따라)</td>
+</tr>
+<tr>
+<td>📊 난이도</td>
+<td>⭐⭐⭐ (어려움)</td>
+</tr>
+<tr>
+<td>🔧 사전 준비</td>
+<td>Python 3.6+</td>
+</tr>
+<tr>
+<td>🔄 사용 빈도</td>
+<td>스킬 개발시, 주간/월간 점검</td>
+</tr>
+<tr>
+<td>📦 의존성</td>
+<td>Python 스크립트</td>
+</tr>
+<tr>
+<td>🎁 아웃풋</td>
+<td>plan.md, SKILL.md, 검증 리포트, 레지스트리</td>
+</tr>
+<tr>
+<td>🔒 개인정보</td>
+<td>없음</td>
+</tr>
+</table>
 <p>## 🎯 추천 워크플로</p>
 <br>
 <p>### 📅 주간 스킬 점검</p>
